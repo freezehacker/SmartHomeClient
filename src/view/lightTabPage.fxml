@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane prefHeight="119.0" prefWidth="780.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="158.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="622.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="119.0" minHeight="88.0" prefHeight="119.0" />
+            <RowConstraints maxHeight="31.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="119.0" prefWidth="194.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="56.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@light_bulb_87.645051194539px_1206837_easyicon.net.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="62.0" layoutY="78.0" prefHeight="24.0" prefWidth="79.0" text="大厅">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="118.0" prefWidth="545.0" GridPane.columnIndex="1">
+               <children>
+                  <Slider layoutX="23.0" layoutY="38.0" prefHeight="29.0" prefWidth="313.0" />
+                  <Label layoutX="23.0" layoutY="67.0" text="暗">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="318.0" layoutY="64.0" text="亮">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <Line endX="800.0" stroke="#00000066" />
+      <GridPane prefHeight="119.0" prefWidth="780.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="158.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="622.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="119.0" minHeight="88.0" prefHeight="119.0" />
+            <RowConstraints maxHeight="31.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="119.0" prefWidth="194.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="56.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@light_bulb_87.645051194539px_1206837_easyicon.net.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="62.0" layoutY="78.0" prefHeight="24.0" prefWidth="79.0" text="主卧室">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="118.0" prefWidth="545.0" GridPane.columnIndex="1">
+               <children>
+                  <Slider layoutX="23.0" layoutY="38.0" prefHeight="29.0" prefWidth="313.0" />
+                  <Label layoutX="23.0" layoutY="67.0" text="暗">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="318.0" layoutY="64.0" text="亮">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <Line endX="800.0" stroke="#00000066" />
+      <GridPane prefHeight="119.0" prefWidth="780.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="158.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="649.0" minWidth="10.0" prefWidth="622.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="119.0" minHeight="88.0" prefHeight="119.0" />
+            <RowConstraints maxHeight="31.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="119.0" prefWidth="194.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="56.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@light_bulb_87.645051194539px_1206837_easyicon.net.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="62.0" layoutY="78.0" prefHeight="24.0" prefWidth="79.0" text="厨房">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="118.0" prefWidth="545.0" GridPane.columnIndex="1">
+               <children>
+                  <Slider layoutX="23.0" layoutY="38.0" prefHeight="29.0" prefWidth="313.0" />
+                  <Label layoutX="23.0" layoutY="67.0" text="暗">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="318.0" layoutY="64.0" text="亮">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <Line endX="800.0" stroke="#00000066" />
+   </children>
+</VBox>

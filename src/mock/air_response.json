@@ -1,0 +1,24 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": {
+    "air": [
+      {
+        "id": "12345",
+        "location": "客厅",
+        "open": "0",
+        "windTemp": "25",
+        "windSpeed": "3",
+        "windMode": "1"
+      },
+      {
+        "id": "10982",
+        "location": "主卧室",
+        "open": "0",
+        "windTemp": "28",
+        "windSpeed": "4",
+        "windMode": "0"
+      }
+    ]
+  }
+}

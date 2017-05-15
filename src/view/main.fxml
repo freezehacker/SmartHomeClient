@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:controller="view.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="39.0" prefWidth="800.0">
+         <children>
+            <Button onAction="#exitApp" mnemonicParsing="false" prefHeight="40.0" prefWidth="82.0" text="X" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="625.0" text="智能家居客户端">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="curTime" alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="124.0" text="08：09（4月1日）">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+
+      <TabPane prefHeight="505.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="    门禁管理    ">
+            <content>
+                <fx:include fx:id="doorTabPage" source="doorTabPage.fxml" />
+            </content>
+          </Tab>
+          <Tab text="    灯光控制    ">
+            <content>
+                <fx:include fx:id="lightTabPage" source="lightTabPage.fxml" />
+            </content>
+          </Tab>
+            <Tab text="    空调控制    ">
+               <content>
+                   <fx:include fx:id="airconditioningTabPage" source="airconditioningTabPage.fxml" />
+               </content>
+            </Tab>
+            <Tab text="    窗帘控制    ">
+               <content>
+                   <fx:include fx:id="curtainTabPage" source="curtainTabPage.fxml" />
+               </content>
+            </Tab>
+            <Tab text="    电视控制    ">
+               <content>
+                   <fx:include fx:id="tvTabPage" source="tvTabPage.fxml" />
+               </content>
+            </Tab>
+            <Tab text="    背景音乐    ">
+               <content>
+                   <fx:include fx:id="musicTabPage" source="musicTabPage.fxml" />
+               </content>
+            </Tab>
+            <Tab text="    家居状态    ">
+               <content>
+                   <fx:include fx:id="homeTabPage" source="homeTabPage.fxml" />
+               </content>
+            </Tab>
+            <Tab text="    情景模式    ">
+                <content>
+                    <fx:include fx:id="sceneTabPage" source="sceneTabPage.fxml" />
+                </content>
+            </Tab>
+            <Tab text="    异常记录    ">
+                <content>
+                    <fx:include fx:id="exceptionTabPage" source="exceptionTabPage.fxml" />
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label prefHeight="15.0" prefWidth="61.0" text="   控制台" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="console" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</VBox>

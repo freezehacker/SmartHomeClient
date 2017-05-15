@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="180.0" fitWidth="107.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@window_124.71794871795px_1205240_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <Slider layoutX="178.0" layoutY="33.0" orientation="VERTICAL" prefHeight="163.0" prefWidth="26.0" />
+      <Label layoutX="108.0" layoutY="153.0" prefHeight="23.0" prefWidth="34.0" text="客厅">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="176.0" text="1号窗帘">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="36.0" text="最高" />
+      <Label layoutX="204.0" layoutY="179.0" text="最低" />
+      <ImageView fitHeight="180.0" fitWidth="107.0" layoutX="373.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@window_124.71794871795px_1205240_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <Slider layoutX="480.0" layoutY="33.0" orientation="VERTICAL" prefHeight="163.0" prefWidth="26.0" />
+      <Label layoutX="410.0" layoutY="153.0" prefHeight="23.0" prefWidth="34.0" text="客厅">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="400.0" layoutY="176.0" text="2号窗帘">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="506.0" layoutY="36.0" text="最高" />
+      <Label layoutX="506.0" layoutY="179.0" text="最低" />
+      <ImageView fitHeight="180.0" fitWidth="107.0" layoutX="71.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@window_124.71794871795px_1205240_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <Slider layoutX="181.0" layoutY="223.0" orientation="VERTICAL" prefHeight="163.0" prefWidth="26.0" />
+      <Label layoutX="111.0" layoutY="343.0" prefHeight="23.0" prefWidth="34.0" text="客厅">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="366.0" text="3号窗帘">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="207.0" layoutY="226.0" text="最高" />
+      <Label layoutX="207.0" layoutY="369.0" text="最低" />
+      <ImageView fitHeight="180.0" fitWidth="107.0" layoutX="378.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@window_124.71794871795px_1205240_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <Slider layoutX="480.0" layoutY="223.0" orientation="VERTICAL" prefHeight="163.0" prefWidth="26.0" />
+      <Label layoutX="403.0" layoutY="337.0" prefHeight="23.0" prefWidth="46.0" text="主卧室">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="393.0" layoutY="357.0" text="1号窗帘">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="499.0" layoutY="217.0" text="最高" />
+      <Label layoutX="499.0" layoutY="360.0" text="最低" />
+   </children>
+</AnchorPane>

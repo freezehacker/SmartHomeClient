@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView layoutX="443.0" layoutY="37.0" prefHeight="312.0" prefWidth="305.0" />
+      <ImageView fitHeight="71.0" fitWidth="83.0" layoutX="186.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pause_96px_1205832_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="37.0" layoutX="115.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@previous_96px_1205837_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="37.0" layoutX="283.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@next_96px_1205820_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="105.0" fitWidth="108.0" layoutX="169.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cdrom_musicplayer_64px_14199_easyicon.net.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="177.0" layoutY="198.0" text="正在播放：">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="230.0" text="14. 杀死我的温柔 麦家瑜...">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

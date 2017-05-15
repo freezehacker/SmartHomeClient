@@ -1,0 +1,22 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "id": "10085809",
+      "location": "客厅",
+      "open": "0",
+      "windTemp": "30",
+      "windSpeed": "6",
+      "windMode": "2"
+    },
+    {
+      "id": "135081807",
+      "location": "主卧室",
+      "open": "0",
+      "windTemp": "28",
+      "windSpeed": "4",
+      "windMode": "0"
+    }
+  ]
+}
