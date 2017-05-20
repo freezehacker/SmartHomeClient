@@ -15,7 +15,6 @@ public interface ExpRecordRepository {
 
     void deleteAll();
 
-
     List<ExceptionRecord> queryByDay(String day);
 
     void deleteByDay(String day);

@@ -1,7 +1,7 @@
 package bean.VO;
 
 /**
- * Created by JK on 2017/4/18.
+ * Created by JK.
  */
 public class GasSensor {
 

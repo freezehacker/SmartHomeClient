@@ -10,12 +10,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
 import repository.ExpRecordRepository;
 import repository.impl.ExpRecordRepositoryImpl;
 import utils.MessageUtils;
 import utils.TimeUtils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -23,11 +32,11 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Created by JK on 2017/4/20.
+ * Created by JK.
  */
 public class ExceptionTabPageController {
 
-    private ExpRecordRepository expRecordRepository=new ExpRecordRepositoryImpl();
+    private ExpRecordRepository expRecordRepository = new ExpRecordRepositoryImpl();
 
     private List<ExceptionRecord> records;
     private ObservableList<ExceptionRecord> exceptionRecords = FXCollections.observableArrayList();
@@ -43,18 +52,11 @@ public class ExceptionTabPageController {
     @FXML
     private TableColumn<ExceptionRecord, String> dateColumn;
 
-    @FXML private DatePicker datepicker;
+    @FXML
+    private DatePicker datepicker;
 
     @FXML
     public void initialize() {
-        /*exceptionRecords.add(new ExceptionRecord("张三", "空调","温度超过了40摄氏度","2016-02-01 10:20"));
-        exceptionRecords.add(new ExceptionRecord("张三", "温度传感器","室内温度高于安全值","2016-06-03 21:20"));
-        exceptionRecords.add(new ExceptionRecord("张三", "温度传感器","室内温度高于安全值","2016-12-01 21:00"));
-        exceptionRecords.add(new ExceptionRecord("李四", "温度传感器","室内温度高于安全值","2016-12-12 20:07"));
-        exceptionRecords.add(new ExceptionRecord("张三", "湿度传感器","室内湿度值过低","2017-03-12 14:07"));*/
-
-        //exceptionRecords.add(new ExceptionRecord("未知用户（111111111）", "-","有非户主进行刷卡操作","2017-5-7 15:18"));
-
         datepicker.setValue(LocalDate.now());   // 始终显示当前日期
         datepicker.setConverter(new StringConverter<LocalDate>() {
 
@@ -75,7 +77,7 @@ public class ExceptionTabPageController {
 
         String curDate = TimeUtils.getCurrentDateString();
         records = expRecordRepository.queryByDay(curDate);
-        for (ExceptionRecord er:records) {
+        for (ExceptionRecord er : records) {
             exceptionRecords.add(er);
         }
 
@@ -94,7 +96,7 @@ public class ExceptionTabPageController {
         //System.out.println(date);
         records = expRecordRepository.queryByDay(date);
         exceptionRecords.clear();
-        for (ExceptionRecord er:records) {
+        for (ExceptionRecord er : records) {
             exceptionRecords.add(er);
         }
         exceptionRecordTable.refresh();
@@ -102,30 +104,45 @@ public class ExceptionTabPageController {
 
     @FXML
     private void export() {
-        new AlertWindow("提示", "该功能暂未实现").show();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("导出到...");
+        fileChooser.setInitialFileName("异常记录.xls");
+        File file = fileChooser.showSaveDialog(Main.getStage());
+        if (file != null) { // 如果点击了保存，便会生成一个文件的内存映像
+            List<ExceptionRecord> exceptionRecordList = expRecordRepository.list();
 
-        MessageUtils.sendTemplateMessage("18819481197", "有非户主进行刷卡操作");
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                WritableWorkbook workbook = Workbook.createWorkbook(fos);
+                WritableSheet sheet = workbook.createSheet("全部", 0);
 
-        MessageUtils.sendTemplateMessage("18819481197", "客厅温度（来自编号12345的温度传感器）超过预设值（35℃）");
+                sheet.addCell(new Label(0,0,"用户"));
+                sheet.addCell(new Label(1,0,"设备"));
+                sheet.addCell(new Label(2,0,"异常原因"));
+                sheet.addCell(new Label(3,0,"时间"));
+
+                for (int i = 0, size = exceptionRecordList.size(); i < size; ++i) {
+                    final ExceptionRecord er = exceptionRecordList.get(i);
+                    sheet.addCell(new Label(0, i + 1, er.getEr_username()));
+                    sheet.addCell(new Label(1, i + 1, er.getEr_device()));
+                    sheet.addCell(new Label(2, i + 1, er.getEr_cause()));
+                    sheet.addCell(new Label(3, i + 1, er.getEr_date()));
+                }
+
+                workbook.write();
+                workbook.close();
+                fos.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
     private void deleteAll() {
         exceptionRecords.clear();
-
         expRecordRepository.deleteByDay(TimeUtils.getCurrentDateString());
-
         exceptionRecordTable.refresh();
     }
-/*
-    private void listData(List<ExceptionRecord> ers) {
-        records.clear();
-        records.addAll(ers);
-        exceptionRecordTable.refresh();
-    }
-
-    private void addData(List<ExceptionRecord> ers) {
-        records.addAll(ers);
-        exceptionRecordTable.refresh();
-    }*/
 }

@@ -30,7 +30,7 @@ CREATE TABLE `Device` (
   DEFAULT CHARSET = utf8;
 
 CREATE TABLE `User` (
-  `u_id`     INT(10) UNSIGNED NOT NULL,
+  `u_id`     INT(10)  NOT NULL,
   `u_name`   VARCHAR(50)      NOT NULL,
   `u_gender` ENUM ('M', 'F')  NOT NULL,
   `u_phone`  VARCHAR(50)      NOT NULL,

@@ -1,7 +1,7 @@
 package utils;
 
 /**
- * Created by JK on 2017/4/18.
+ * Created by JK.
  *
  * Add logs in this level.
  */

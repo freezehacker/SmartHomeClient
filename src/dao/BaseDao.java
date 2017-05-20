@@ -3,7 +3,7 @@ package dao;
 import java.util.List;
 
 /**
- * Created by JK on 2017/4/27.
+ * Created by JK.
  */
 public interface BaseDao<T> {
 

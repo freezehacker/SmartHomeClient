@@ -1,0 +1,54 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "id": "200000",
+      "name": "Eraser",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200001",
+      "name": "Castle on the hill",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200002",
+      "name": "Dive",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200003",
+      "name": "Shape of you",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200004",
+      "name": "Perfect",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200005",
+      "name": "Galway girl",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200006",
+      "name": "Happier",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    },
+    {
+      "id": "200007",
+      "name": "New man",
+      "artist": "Ed Sheeran",
+      "duration": "240"
+    }
+  ]
+}

@@ -18,13 +18,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by JK on 2017/4/20.
+ * Created by JK.
  */
 public class AirconditioningTabPageController {
 
     public static long SYNC_READ_PERIOD = 5000;
 
-    public static final String MOCK_SERVER = "http://www.mockhttp.cn/mock/mock/accessSensor";
     public static final String MOCK_FILE = "src/mock/mock.json";
 
     @FXML private Label air1_id;
@@ -43,9 +42,7 @@ public class AirconditioningTabPageController {
 
     @FXML
     public void initialize() {
-
        new Timer().schedule(new SyncReading(), SYNC_READ_PERIOD, SYNC_READ_PERIOD);
-
     }
 
 
@@ -92,13 +89,6 @@ public class AirconditioningTabPageController {
     }
 
     private void print(String str) {
-        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
-        mainController = loader.<MainController>getController();
-        mainController.receive(str);
-        */
-
         MainController.globalAddMessage(str);
-
-        //System.out.println(str);
     }
 }

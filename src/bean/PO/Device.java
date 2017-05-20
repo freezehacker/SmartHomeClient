@@ -3,7 +3,7 @@ package bean.PO;
 import java.util.Date;
 
 /**
- * Created by JK on 2017/4/20.
+ * Created by JK.
  */
 public class Device {
 

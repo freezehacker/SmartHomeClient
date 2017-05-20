@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Created by JK on 2017/4/13.
+ * Created by JK.
  */
 public class NetworkClient {
 

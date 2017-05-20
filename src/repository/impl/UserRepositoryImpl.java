@@ -2,12 +2,16 @@ package repository.impl;
 
 import bean.PO.User;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import repository.UserRepository;
 import utils.DBUtils;
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -52,6 +56,17 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public void deleteAll() {
+        QueryRunner qr = new QueryRunner(DBUtils.getDataSource());
+        String sql = "DELETE FROM `User`";
+        try {
+            qr.update(sql);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    @Override
     public User get(int id) {
         QueryRunner qr = new QueryRunner(DBUtils.getDataSource());
         String sql = "SELECT * FROM `User` " +
@@ -69,7 +84,18 @@ public class UserRepositoryImpl implements UserRepository {
         QueryRunner qr = new QueryRunner(DBUtils.getDataSource());
         String sql = "SELECT * FROM `User`";
         try {
-            return (List<User>)qr.query(sql, new BeanListHandler(User.class));
+            return qr.query(sql, resultSet -> {
+                List<User> ret = new ArrayList<>();
+                while (resultSet.next()) {
+                    User user = new User();
+                    user.setU_id(resultSet.getInt("u_id"));
+                    user.setU_gender(resultSet.getString("u_gender"));
+                    user.setU_name(resultSet.getString("u_name"));
+                    user.setU_phone(resultSet.getString("u_phone"));
+                    ret.add(user);
+                }
+                return ret;
+            });
         } catch (SQLException e) {
             System.out.println(e);
             return null;

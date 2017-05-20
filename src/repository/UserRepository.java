@@ -15,6 +15,8 @@ public interface UserRepository {
 
     void delete(int id);
 
+    void deleteAll();
+
     User get(int id);
 
     List<User> list();

@@ -2,7 +2,7 @@ package utils;
 
 import java.io.*;
 
-import static org.hibernate.sql.InFragment.NULL;
+
 
 /**
  * Created by JK.
@@ -10,13 +10,13 @@ import static org.hibernate.sql.InFragment.NULL;
 public class StringUtils {
 
     public static boolean isEmpty(String s) {
-        return s == NULL || s.length() == 0;
+        return s == null || s.length() == 0;
     }
 
     public static String fromFile(String file) {
-        StringBuilder sb=  new StringBuilder();
-        InputStream is =null;
-        BufferedReader br=null;
+        StringBuilder sb = new StringBuilder();
+        InputStream is = null;
+        BufferedReader br = null;
         try {
             is = new FileInputStream(file);
             br = new BufferedReader(new InputStreamReader(is));

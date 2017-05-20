@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Created by JK on 2017/4/13.
+ * Created by JK
  */
 public class SceneSwitcher {
 

@@ -23,5 +23,6 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.39" level="project" />
     <orderEntry type="library" name="commons-dbutils-1.6" level="project" />
     <orderEntry type="library" name="okio-1.12.0" level="project" />
+    <orderEntry type="library" name="jxl" level="project" />
   </component>
 </module>

@@ -1,7 +1,7 @@
 package bean.PO;
 
 /**
- * Created by JK on 2017/4/20.
+ * Created by JK.
  */
 public class User {
 
@@ -9,6 +9,10 @@ public class User {
     private String u_name;
     private String u_gender;
     private String u_phone;
+
+    public User() {
+
+    }
 
     public User(Integer u_id, String u_name, String u_gender, String u_phone) {
         this.u_id = u_id;

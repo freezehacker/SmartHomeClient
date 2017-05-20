@@ -31,6 +31,7 @@ public class MainController implements IReceiver {
         String str = globalConsole.getText() + "\n"
                 + msg + "(" + TimeUtils.getCurrentTimeString() + ")";
         globalConsole.setText(str);
+        globalConsole.setScrollTop(globalConsole.getHeight());
     }
 
     @FXML
@@ -74,4 +75,8 @@ public class MainController implements IReceiver {
         console.setText(str);
     }
 
+    @FXML
+    public void onSelectDoorCrudTab() {
+        DoorTabCrudPageController.getInstance().refreshList();
+    }
 }
