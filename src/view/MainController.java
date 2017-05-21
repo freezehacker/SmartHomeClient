@@ -18,11 +18,9 @@ import java.util.TimerTask;
  */
 public class MainController implements IReceiver {
 
-    @FXML
-    private Label curTime;
+    //@FXML private Label curTime;
 
-    @FXML
-    private TextArea console;
+    @FXML private TextArea console;
 
     private static TextArea globalConsole;
 
@@ -36,13 +34,7 @@ public class MainController implements IReceiver {
 
     @FXML
     public void initialize() {
-        new Timer().schedule(new AccessTimeTask(), 0, 500);
-
-        /*console.setText("张三（ID：1234567890）：刷卡。（15：13）\n" +
-                "系统：开门。（15：13）\n" +
-                "非户主（ID：111111111）：刷卡。（15：18）\n" +
-                "系统：拒绝开门。（15：18）\n");*/
-
+        //new Timer().schedule(new AccessTimeTask(), 0, 500);
         globalConsole = console;
     }
 
@@ -57,7 +49,7 @@ public class MainController implements IReceiver {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    curTime.setText(TimeUtils.getCurrentDateTimeString());
+                    //curTime.setText(TimeUtils.getCurrentDateTimeString());
                 }
             });
         }

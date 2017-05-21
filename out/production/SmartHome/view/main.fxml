@@ -19,13 +19,18 @@
                         <Font name="System Bold" size="18.0"/>
                     </font>
                 </Label>
-                <Label fx:id="curTime" layoutX="700.0" layoutY="16.0" text="11"/>
-                <Label layoutX="640.0" layoutY="16.0" text="当前时间："/>
+                <!--<Label fx:id="curTime" layoutX="700.0" layoutY="16.0" text="11"/>-->
+                <!--<Label layoutX="640.0" layoutY="16.0" text="当前时间："/>-->
             </children>
         </AnchorPane>
 
         <TabPane prefHeight="505.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
+                <Tab text="    关于系统    ">
+                    <content>
+                        <fx:include fx:id="infoPage" source="info.fxml"/>
+                    </content>
+                </Tab>
                 <Tab text="    门禁登记    ">
                     <content>
                         <fx:include fx:id="doorTabPage" source="doorTabPage.fxml"/>

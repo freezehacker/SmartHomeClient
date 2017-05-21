@@ -7,62 +7,75 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DoorTabPageController">
-   <children>
-      <Label layoutX="334.0" layoutY="36.0" text="RFID身份登记">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Label>
-      <Label layoutX="230.0" layoutY="89.0" text="标签ID">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <TextField fx:id="userId" layoutX="287.0" layoutY="84.0" prefHeight="29.0" prefWidth="222.0">
-         <font>
-            <Font size="14.0" />
-         </font></TextField>
-      <Label layoutX="237.0" layoutY="138.0" text="姓名">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <TextField fx:id="userName" layoutX="286.0" layoutY="133.0" prefHeight="29.0" prefWidth="222.0">
-         <font>
-            <Font size="14.0" />
-         </font></TextField>
-      <Label layoutX="237.0" layoutY="228.0" text="手机">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <TextField fx:id="userPhone" layoutX="286.0" layoutY="223.0" prefHeight="29.0" prefWidth="222.0">
-         <font>
-            <Font size="14.0" />
-         </font></TextField>
-      <Label layoutX="237.0" layoutY="182.0" text="性别">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <RadioButton fx:id="userMale" layoutX="286.0" layoutY="182.0" mnemonicParsing="false" text="男">
-         <font>
-            <Font size="14.0" />
-         </font></RadioButton>
-      <RadioButton fx:id="userFemale" layoutX="351.0" layoutY="182.0" mnemonicParsing="false" text="女">
-         <font>
-            <Font size="14.0" />
-         </font></RadioButton>
-      <Label layoutX="516.0" layoutY="89.0" text="*必填项" textFill="RED">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="515.0" layoutY="137.0" text="*必填项" textFill="RED">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="submit" onAction="#submitUser" layoutX="322.0" layoutY="275.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="137.0" text="确认">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0"
+            prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.DoorTabPageController">
+    <children>
+        <Label layoutX="334.0" layoutY="36.0" text="RFID身份登记">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="230.0" layoutY="89.0" text="标签ID">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="userId" layoutX="287.0" layoutY="84.0" prefHeight="29.0" prefWidth="222.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="237.0" layoutY="138.0" text="姓名">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="userName" layoutX="286.0" layoutY="133.0" prefHeight="29.0" prefWidth="222.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="237.0" layoutY="228.0" text="手机">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="userPhone" layoutX="286.0" layoutY="223.0" prefHeight="29.0" prefWidth="222.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="237.0" layoutY="182.0" text="性别">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <RadioButton fx:id="userMale" layoutX="286.0" layoutY="182.0" mnemonicParsing="false" text="男">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="userFemale" layoutX="351.0" layoutY="182.0" mnemonicParsing="false" text="女">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </RadioButton>
+        <Label layoutX="516.0" layoutY="89.0" text="*必填项" textFill="RED">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="515.0" layoutY="137.0" text="*必填项" textFill="RED">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Button fx:id="submit" onAction="#submitUser" layoutX="322.0" layoutY="275.0" mnemonicParsing="false"
+                prefHeight="29.0" prefWidth="137.0" text="确认">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>
