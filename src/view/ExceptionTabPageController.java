@@ -1,12 +1,13 @@
 package view;
 
-import Component.AlertWindow;
 import bean.VO.ExceptionRecord;
+import com.google.common.eventbus.Subscribe;
+import eventbus.EventBus;
+import eventbus.ExceptionalEvent;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,18 +19,13 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import repository.ExpRecordRepository;
 import repository.impl.ExpRecordRepositoryImpl;
-import utils.MessageUtils;
 import utils.TimeUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  * Created by JK.
@@ -37,7 +33,6 @@ import java.util.regex.Pattern;
 public class ExceptionTabPageController {
 
     private ExpRecordRepository expRecordRepository = new ExpRecordRepositoryImpl();
-
     private List<ExceptionRecord> records;
     private ObservableList<ExceptionRecord> exceptionRecords = FXCollections.observableArrayList();
 
@@ -57,6 +52,8 @@ public class ExceptionTabPageController {
 
     @FXML
     public void initialize() {
+        EventBus.getDefault().register(this);
+
         datepicker.setValue(LocalDate.now());   // 始终显示当前日期
         datepicker.setConverter(new StringConverter<LocalDate>() {
 
@@ -116,10 +113,10 @@ public class ExceptionTabPageController {
                 WritableWorkbook workbook = Workbook.createWorkbook(fos);
                 WritableSheet sheet = workbook.createSheet("全部", 0);
 
-                sheet.addCell(new Label(0,0,"用户"));
-                sheet.addCell(new Label(1,0,"设备"));
-                sheet.addCell(new Label(2,0,"异常原因"));
-                sheet.addCell(new Label(3,0,"时间"));
+                sheet.addCell(new Label(0, 0, "用户"));
+                sheet.addCell(new Label(1, 0, "设备"));
+                sheet.addCell(new Label(2, 0, "异常原因"));
+                sheet.addCell(new Label(3, 0, "时间"));
 
                 for (int i = 0, size = exceptionRecordList.size(); i < size; ++i) {
                     final ExceptionRecord er = exceptionRecordList.get(i);
@@ -132,7 +129,6 @@ public class ExceptionTabPageController {
                 workbook.write();
                 workbook.close();
                 fos.close();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -144,5 +140,11 @@ public class ExceptionTabPageController {
         exceptionRecords.clear();
         expRecordRepository.deleteByDay(TimeUtils.getCurrentDateString());
         exceptionRecordTable.refresh();
+    }
+
+    @Subscribe
+    public void onEvent(ExceptionalEvent exceptionalEvent) {
+        ExceptionRecord record = exceptionalEvent.getExceptionRecord();
+        expRecordRepository.insert(record);
     }
 }

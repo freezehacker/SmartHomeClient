@@ -22,7 +22,7 @@ public class TimeUtils {
         String second = String.valueOf(calendar.get(Calendar.SECOND));
         if (second.length() == 1) second = "0" + second;
 
-        String showTime = String.format("%s月%s日 %s：%s", month, day, hour, minute);
+        String showTime = String.format("%s月%s日 %s:%s:%s", month, day, hour, minute, second);
 
         return showTime;
     }
@@ -53,7 +53,7 @@ public class TimeUtils {
         String second = String.valueOf(calendar.get(Calendar.SECOND));
         if (second.length() == 1) second = "0" + second;
 
-        String showTime = String.format("%s:%s:%s", hour, minute, second);
+        String showTime = String.format("%s：%s：%s", hour, minute, second);
 
         return showTime;
     }

@@ -19,8 +19,8 @@
                         <Font name="System Bold" size="18.0"/>
                     </font>
                 </Label>
-                <!--<Label fx:id="curTime" layoutX="700.0" layoutY="16.0" text="11"/>-->
-                <!--<Label layoutX="640.0" layoutY="16.0" text="当前时间："/>-->
+                <Label fx:id="curTime" layoutX="700.0" layoutY="16.0" text="11"/>
+                <Label layoutX="640.0" layoutY="16.0" text="当前时间："/>
             </children>
         </AnchorPane>
 

@@ -24,5 +24,6 @@
     <orderEntry type="library" name="commons-dbutils-1.6" level="project" />
     <orderEntry type="library" name="okio-1.12.0" level="project" />
     <orderEntry type="library" name="jxl" level="project" />
+    <orderEntry type="library" name="guava-22.0" level="project" />
   </component>
 </module>

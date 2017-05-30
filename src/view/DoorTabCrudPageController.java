@@ -1,6 +1,9 @@
 package view;
 
 import bean.PO.User;
+import com.google.common.eventbus.Subscribe;
+import eventbus.EventBus;
+import eventbus.RefreshListEvent;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -31,15 +34,10 @@ public class DoorTabCrudPageController {
 
     private UserRepository userRepository = new UserRepositoryImpl();
 
-    private static DoorTabCrudPageController __instance = null;
-
-    public static DoorTabCrudPageController getInstance() {
-        return __instance;
-    }
 
     @FXML
     public void initialize() {
-        __instance = this;
+        EventBus.getDefault().register(this);
 
         // 设置表格每一列的呈现形式
         nameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getU_name()));
@@ -47,6 +45,11 @@ public class DoorTabCrudPageController {
         mobileCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getU_phone()));
         genderCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getU_gender()));
 
+        refreshList();
+    }
+
+    @Subscribe
+    public void onRefresh(RefreshListEvent event) {
         refreshList();
     }
 

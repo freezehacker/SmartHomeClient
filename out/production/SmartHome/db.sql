@@ -1,8 +1,11 @@
+CREATE DATABASE IF NOT EXISTS me;
+USE me;
+
 DROP TABLE IF EXISTS `Preference`;
 DROP TABLE IF EXISTS `Device`;
 DROP TABLE IF EXISTS `User`;
 DROP TABLE IF EXISTS `Hardware`;
-
+DROP TABLE IF EXISTS `ExceptionRecord`;
 
 CREATE TABLE `Hardware` (
   `hw_no`           INT(10) UNSIGNED NOT NULL,

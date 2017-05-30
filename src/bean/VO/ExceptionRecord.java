@@ -1,5 +1,7 @@
 package bean.VO;
 
+import utils.StringUtils;
+
 /**
  * Created by JK.
  */
@@ -10,7 +12,8 @@ public class ExceptionRecord {
     private String er_cause;
     private String er_date;
 
-    public ExceptionRecord() {}
+    public ExceptionRecord() {
+    }
 
     public ExceptionRecord(String er_username, String er_device, String er_cause, String er_date) {
         this.er_username = er_username;
@@ -49,5 +52,13 @@ public class ExceptionRecord {
 
     public void setEr_date(String er_date) {
         this.er_date = er_date;
+    }
+
+    @Override
+    public String toString() {
+        return (StringUtils.isEmpty(er_username) ? "" : "用户：" + er_username + ";")
+                + (StringUtils.isEmpty(er_device) ? "" : "设备：" + er_device + ";")
+                + "异常事件：" + er_cause + ";"
+                + "时间：" + er_date;
     }
 }

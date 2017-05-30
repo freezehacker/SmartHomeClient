@@ -1,5 +1,6 @@
 package view;
 
+import eventbus.EventBus;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.application.Application;
@@ -7,6 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import utils.MessageHelper;
+import utils.RFIDHelper;
+
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -29,7 +33,13 @@ public class Main extends Application {
 
         stage = primaryStage;
 
+        //EventBus.getDefault().register(MessageHelper.getInstance());
+        MessageHelper.getInstance();
+
         primaryStage.show();
+
+        //RFIDHelper.getInstance().onCheck("123456789");
+        //RFIDHelper.getInstance().onCheck("124578451");
     }
 
     public static Stage getStage() {
@@ -39,4 +49,18 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
+
+    @Override
+    public void stop() throws Exception {
+        //EventBus.getDefault().unregister(MessageHelper.getInstance());
+        super.stop();
+    }
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+    }
+
 }

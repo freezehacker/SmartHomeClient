@@ -9,6 +9,8 @@ import java.util.Map;
 
 /**
  * Created by JK.
+ *
+ * 短信模块。以类(utils)的方式。
  */
 public class MessageUtils {
 

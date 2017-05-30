@@ -1,10 +1,9 @@
 package view;
 
-import Component.AlertWindow;
+import component.AlertWindow;
 import bean.PO.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -13,11 +12,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import repository.UserRepository;
 import repository.impl.UserRepositoryImpl;
-import sun.swing.StringUIClientPropertyKey;
 import utils.StringUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by JK.
