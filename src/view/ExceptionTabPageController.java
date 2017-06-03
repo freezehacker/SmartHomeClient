@@ -32,9 +32,9 @@ import java.util.List;
  */
 public class ExceptionTabPageController {
 
+    public static final String DATE_FORMAT = "yyyy-MM-dd";
+
     private ExpRecordRepository expRecordRepository = new ExpRecordRepositoryImpl();
-    private List<ExceptionRecord> records;
-    private ObservableList<ExceptionRecord> exceptionRecords = FXCollections.observableArrayList();
 
     @FXML
     private TableView<ExceptionRecord> exceptionRecordTable;
@@ -50,21 +50,24 @@ public class ExceptionTabPageController {
     @FXML
     private DatePicker datepicker;
 
+    private void refreshTable() {
+        List<ExceptionRecord> records = expRecordRepository.queryByDay(TimeUtils.getCurrentDateString());
+        ObservableList<ExceptionRecord> obsRecords = FXCollections.observableArrayList(records);
+        exceptionRecordTable.setItems(obsRecords);
+    }
+
     @FXML
     public void initialize() {
         EventBus.getDefault().register(this);
 
         datepicker.setValue(LocalDate.now());   // 始终显示当前日期
         datepicker.setConverter(new StringConverter<LocalDate>() {
-
-            final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
+            final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT);
             @Override
             public String toString(LocalDate object) {
                 if (object == null) return "";
                 return formatter.format(object);
             }
-
             @Override
             public LocalDate fromString(String string) {
                 if (string == null || string.length() == 0) return null;
@@ -72,18 +75,12 @@ public class ExceptionTabPageController {
             }
         });
 
-        String curDate = TimeUtils.getCurrentDateString();
-        records = expRecordRepository.queryByDay(curDate);
-        for (ExceptionRecord er : records) {
-            exceptionRecords.add(er);
-        }
-
         usernameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEr_username()));
         deviceColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEr_device()));
         causeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEr_cause()));
         dateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEr_date()));
 
-        exceptionRecordTable.setItems(exceptionRecords);
+        refreshTable();
     }
 
     /*选定某个日期*/
@@ -91,12 +88,10 @@ public class ExceptionTabPageController {
     public void datepicker_submit() {
         String date = datepicker.getValue().toString();
         //System.out.println(date);
-        records = expRecordRepository.queryByDay(date);
-        exceptionRecords.clear();
-        for (ExceptionRecord er : records) {
-            exceptionRecords.add(er);
-        }
-        exceptionRecordTable.refresh();
+
+        List<ExceptionRecord> records = expRecordRepository.queryByDay(date);
+        ObservableList<ExceptionRecord> recordList = FXCollections.observableArrayList(records);
+        exceptionRecordTable.setItems(recordList);
     }
 
     @FXML
@@ -135,16 +130,20 @@ public class ExceptionTabPageController {
         }
     }
 
+    /* 删除那一天所有异常记录 */
     @FXML
     private void deleteAll() {
-        exceptionRecords.clear();
-        expRecordRepository.deleteByDay(TimeUtils.getCurrentDateString());
-        exceptionRecordTable.refresh();
+        String thatDay = datepicker.getValue().format(DateTimeFormatter.ofPattern(DATE_FORMAT));
+        expRecordRepository.deleteByDay(thatDay);
+        exceptionRecordTable.setItems(null);
     }
 
     @Subscribe
     public void onEvent(ExceptionalEvent exceptionalEvent) {
         ExceptionRecord record = exceptionalEvent.getExceptionRecord();
         expRecordRepository.insert(record);
+        refreshTable();
     }
+
+
 }

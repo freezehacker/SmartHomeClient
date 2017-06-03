@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 
 /**
  * Created by JK.
+ *
+ * 自定义弹出框，相当于Android中的AlertDialog
+ * 需要增加按钮点击事件时，可以增加一个回调函数作为参数
  */
 public class AlertWindow {
 

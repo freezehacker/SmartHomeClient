@@ -30,16 +30,15 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         //primaryStage.setTitle("Smart Home");
         primaryStage.setScene(new Scene(root, SCENE_WIDTH, SCENE_HEIGHT));
-
         stage = primaryStage;
-
-        //EventBus.getDefault().register(MessageHelper.getInstance());
-        MessageHelper.getInstance();
-
+        MessageHelper.getInstance();    // 激活其static初始化块
         primaryStage.show();
 
-        //RFIDHelper.getInstance().onCheck("123456789");
-        //RFIDHelper.getInstance().onCheck("124578451");
+
+        // 模拟户主刷卡
+        RFIDHelper.getInstance().onCheck("123456789");
+        // 模拟非户主刷卡
+        RFIDHelper.getInstance().onCheck("124578451");
     }
 
     public static Stage getStage() {
@@ -54,7 +53,6 @@ public class Main extends Application {
 
     @Override
     public void stop() throws Exception {
-        //EventBus.getDefault().unregister(MessageHelper.getInstance());
         super.stop();
     }
 
@@ -62,5 +60,4 @@ public class Main extends Application {
     public void init() throws Exception {
         super.init();
     }
-
 }

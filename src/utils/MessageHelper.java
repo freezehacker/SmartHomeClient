@@ -29,7 +29,6 @@ public class MessageHelper {
     static {
         __instance = new MessageHelper();
         EventBus.getDefault().register(__instance);
-        //System.out.println("static块");
     }
 
     private MessageHelper() {
@@ -41,9 +40,8 @@ public class MessageHelper {
 
     @Subscribe
     public void onEvent(ExceptionalEvent event) {
-        System.out.println("world");
         String mobile = SysConfig.MOBILE;
-        String message = "发生异常事件：" + event.getExceptionRecord().toString();
+        String message = event.getExceptionRecord().toString();
         this.send(mobile, message);
     }
 

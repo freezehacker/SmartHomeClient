@@ -13,7 +13,9 @@ public class TimeUtils {
 
         String year = String.valueOf(calendar.get(Calendar.YEAR));
         String month = String.valueOf(calendar.get(Calendar.MONTH) + 1);
+        if (month.length() == 1) month = "0" + month;
         String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        if (day.length() == 1) day = "0" + day;
 
         String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
         if (hour.length() == 1) hour = "0" + hour;
@@ -22,7 +24,7 @@ public class TimeUtils {
         String second = String.valueOf(calendar.get(Calendar.SECOND));
         if (second.length() == 1) second = "0" + second;
 
-        String showTime = String.format("%s月%s日 %s:%s:%s", month, day, hour, minute, second);
+        String showTime = String.format("%s-%s-%s %s:%s", year, month, day, hour, minute);
 
         return showTime;
     }

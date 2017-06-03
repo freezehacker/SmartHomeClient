@@ -64,6 +64,8 @@ public class RFIDHelper {
                 /* 生成异常事件 */
 
                 ExceptionRecord record = new ExceptionRecord();
+                record.setEr_username("-");
+                record.setEr_device("-");
                 record.setEr_date(TimeUtils.getCurrentDateTimeString());
                 record.setEr_cause("有非户主（" + rfidId + "）进行刷卡");
 
